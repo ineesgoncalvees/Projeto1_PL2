@@ -33,8 +33,6 @@ namespace Projeto1_LP2
         private Uri header_image;
         private Uri website;
 
-        private void Games() {
-
-        }
+        
     }
 }
