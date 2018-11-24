@@ -19,13 +19,6 @@ namespace Projeto1_LP2
 
             ReadEntry();
         }
-
-        public void ShowInfo()
-        {
-            Console.WriteLine("Insert the game's ID, please. \n");
-
-            //Info(id);
-        }
-
+        
     }
 }
