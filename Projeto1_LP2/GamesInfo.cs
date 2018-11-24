@@ -8,31 +8,31 @@ namespace Projeto1_LP2
 {
     class GamesInfo
     {
-        private string name;
-        private int id;        
-        private int r_age;
-        private int dlc;
-        private int metacritic;
-        private int movie_count;
-        private int recommendation_count;
-        private int screenshot_count;
-        private int owners;
-        private int number_of_players;
-        private int achievement_count;
-        private bool controller_suport;
-        private bool platform_windows;
-        private bool platform_linux;
-        private bool platform_mac;
-        private bool category_singleplayer;
-        private bool category_multiplayer;
-        private bool category_coop;
-        private bool category_include_level_editor;
-        private bool category_vr_support;
-        private string about_text;
-        private Uri support_URL;
-        private Uri header_image;
-        private Uri website;
+        private string Name { get; }
+        private int Id { get; }       
+        private int R_age { get; }
+        private int Dlc { get; }
+        private int Metacritic { get; }
+        private int Movie_count { get; }
+        private int Recommendation_count { get; }
+        private int Screenshot_count { get; }
+        private int Owners { get; }
+        private int Number_of_players { get; }
+        private int Achievement_count { get; }
+        private bool Controller_suport { get; }
+        private bool Platform_windows { get; }
+        private bool Platform_linux { get; }
+        private bool Platform_mac { get; }
+        private bool Category_singleplayer { get; }
+        private bool Category_multiplayer { get; }
+        private bool Category_coop { get; }
+        private bool Category_include_level_editor { get; }
+        private bool Category_vr_support { get; }
+        private string About_text { get; }
+        private Uri Support_URL { get; }
+        private Uri Header_image { get; }
+        private Uri Website { get; }
 
-        
+
     }
 }
