@@ -10,6 +10,9 @@ namespace Projeto1_LP2
     {
         static void Main(string[] args)
         {
+           Interface menu = new Interface();
+
+            menu.ShowMenu();
         }
     }
 }
