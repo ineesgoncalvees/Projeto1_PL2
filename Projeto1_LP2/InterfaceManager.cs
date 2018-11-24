@@ -16,11 +16,11 @@ namespace Projeto1_LP2
             while (true)
             {
                 read_number = Console.Read();
-
+                
                 switch (read_number)
                 {
                     case '1':
-                        Info(id);
+                        //Info(id);
                         break;
 
                     case '2':
@@ -29,6 +29,10 @@ namespace Projeto1_LP2
 
                     case '3':
                         return read_number;
+
+                    default:
+                        Console.WriteLine("Not a valid number. Try again.");
+                        break;
                 }
             }
         }
