@@ -43,7 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GamesInfo.cs" />
-    <Compile Include="InferfaceManager.cs" />
+    <Compile Include="InterfaceManager.cs" />
     <Compile Include="Interface.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
