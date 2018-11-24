@@ -10,9 +10,12 @@ namespace Projeto1_LP2
     {
         public void ShowMenu()
         {
-            Console.WriteLine("1. Show game's info\n" +
-                              "2. Make a research\n" +
-                              "3. Leave\n");
+            Console.WriteLine("╔═══*.·:·.**  < x >  **.·:·.*═══╗");
+            Console.WriteLine();
+            Console.WriteLine("       1. Show game's info\n" +
+                              "       2. Make a research\n" +
+                              "       3. Leave\n");
+            Console.WriteLine("╚═══*.·:·.**  < x >  **.·:·.*═══╝");
 
             ReadEntry();
         }
@@ -21,7 +24,7 @@ namespace Projeto1_LP2
         {
             Console.WriteLine("Insert the game's ID, please. \n");
 
-            Info(id);
+            //Info(id);
         }
 
     }
