@@ -9,7 +9,7 @@ namespace Projeto1_LP2
     class GamesInfo
     {
         private string Name { get; }
-        private int Id { get; }       
+        private int ID { get; }       
         private int R_age { get; }
         private int Dlc { get; }
         private int Metacritic { get; }
