@@ -16,11 +16,15 @@ namespace Projeto1_LP2
             while (true)
             {
                 read_number = Console.Read();
+                int id;
                 
                 switch (read_number)
                 {
                     case '1':
-                        //Info(id);
+                        Console.WriteLine("Insert the game's ID, please. \n");
+
+                        id = Console.Read();
+                        Info(id);
                         break;
 
                     case '2':
