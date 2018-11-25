@@ -8,45 +8,64 @@ namespace Projeto1_LP2
 {
     public class InterfaceManager
     {
+        Interface i;
+        GamesList lst;
+
+        public InterfaceManager() { }
+
         public InterfaceManager(string args)
         {
-            GamesList lst = new GamesList(args);
+            lst = new GamesList(args);
+            i = new Interface();
+            i.ShowMenu();
         }
 
         public int ReadEntry()
         {
-            int read_number;
+            string read_number;            
 
             while (true)
             {
-                read_number = Convert.ToInt32(Console.ReadLine());
+                read_number = Console.ReadLine();
                 int id;
                 
                 switch (read_number)
                 {
-                    case '1':
+                    case "1":
                         Console.WriteLine("Insert the game's ID, please. \n");
-
                         id = Console.Read();
-                        Info(id);
+                        CheckID(id);
                         break;
 
-                    case '2':
+                    case "2":
                         Search();
                         break;
 
-                    case '3':
-                        return read_number;
+                    case "3":
+                        Environment.Exit(0);
+                        break;
 
                     default:
                         Console.WriteLine("Not a valid number. Try again.");
+                        Console.ReadLine();
+                        i.ShowMenu();
                         break;
                 }
             }
         }
-        public void Info(int id)
-        {
+
+        public void CheckID(int id) {
             
+            foreach (GamesInfo gi in lst) 
+            {
+                if (gi != null) 
+                {
+                    if (gi.id == id) 
+                    {
+                        Console.WriteLine(gi.ToString());
+                    }
+                }
+            }
         }
 
         private void Search()
