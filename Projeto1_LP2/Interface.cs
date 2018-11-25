@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Projeto1_LP2
 {
-    public class Interface : InterfaceManager
+    public class Interface 
     {
-        public Interface(string args) : base(args)
-        {
-        }
+        InterfaceManager im = new InterfaceManager();
 
         public void ShowMenu()
         {
@@ -21,7 +19,7 @@ namespace Projeto1_LP2
                               "       3. Leave\n");
             Console.WriteLine("╚═══*.·:·.**  < x >  **.·:·.*═══╝");
 
-            ReadEntry();
+            im.ReadEntry();
         }
         
     }
