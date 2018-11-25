@@ -6,37 +6,37 @@ using System.Threading.Tasks;
 
 namespace Projeto1_LP2
 {
-    class GamesInfo
+    public class GamesInfo
     {
-        private string name;
-        private int id;
-        private int r_age;
-        private int dlc;
-        private int metacritic;
-        private int movie_count;
-        private int recommendation_count;
-        private int screenshot_count;
-        private int owners;
-        private int number_of_players;
-        private int achievement_count;
-        private bool controller_support;
-        private bool platform_windows;
-        private bool platform_linux;
-        private bool platform_mac;
-        private bool category_singleplayer;
-        private bool category_multiplayer;
-        private bool category_coop;
-        private bool category_include_level_editor;
-        private bool category_vr_support;
-        private string about_text;
-        private Uri support_URL;
-        private Uri header_image;
-        private Uri website;
-        private DateTime release_date;
+        public readonly string name;
+        public readonly int id;
+        public readonly int r_age;
+        public readonly int dlc;
+        public readonly int metacritic;
+        public readonly int movie_count;
+        public readonly int recommendation_count;
+        public readonly int screenshot_count;
+        public readonly int owners;
+        public readonly int number_of_players;
+        public readonly int achievement_count;
+        public readonly bool controller_support;
+        public readonly bool platform_windows;
+        public readonly bool platform_linux;
+        public readonly bool platform_mac;
+        public readonly bool category_singleplayer;
+        public readonly bool category_multiplayer;
+        public readonly bool category_coop;
+        public readonly bool category_include_level_editor;
+        public readonly bool category_vr_support;
+        public readonly string about_text;
+        public readonly Uri support_URL;
+        public readonly Uri header_image;
+        public readonly Uri website;
+        public readonly DateTime release_date;
 
         public GamesInfo(string name, int id, int r_age, int dlc,
                     int metacritic, int movie_count, int recommendation_count,
-                    int screenshot_count, int owners,int number_of_players,
+                    int screenshot_count, int owners, int number_of_players,
                     int achievement_count, bool controller_support,
                     bool platform_windows, bool platform_linux, bool platform_mac,
                     bool category_singleplayer, bool category_multiplayer,
