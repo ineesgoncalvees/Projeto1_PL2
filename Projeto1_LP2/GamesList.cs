@@ -3,25 +3,49 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Projeto1_LP2
 {
-    public class GamesList : GamesInfo
+    public class GamesList : List<GamesInfo>
     {
-        List<GamesInfo> lst = new List<GamesInfo>();
-
-        public void AddGames()
+        public GamesList(string args)
         {
-            lst.Add(new GamesInfo(name, id, r_age, dlc, metacritic, movie_count,
-                    recommendation_count, screenshot_count, owners,
-                    number_of_players, achievement_count, controller_support,
-                    platform_windows, platform_linux, platform_mac,
-                    category_singleplayer, category_multiplayer, category_coop,
-                    category_include_level_editor, category_vr_support,
-                    about_text, support_URL, header_image, website,
-                    release_date));
+            AddGames(args);
+        }
 
-            
+        public void AddGames(string args)
+        {
+            using (StreamReader sr = new StreamReader(args))
+            {
+                string info = "";
+                GamesInfo gi = null;
+                int srl = 0;
+                
+                while((info = sr.ReadLine()) != null)
+                {
+                    string[] parse = info.Split(',');
+                    bool id_exists = false;
+                    if (srl != 0)
+                    {
+                        gi = new GamesInfo(info);
+
+                        foreach (GamesInfo g_info in this)
+                        {
+                            if (g_info.id == gi.id)
+                            {
+                                id_exists = true;
+                            }
+                        }
+
+                        if (!id_exists)
+                        {
+                            Add(gi);
+                        }
+                    }
+                    srl++;
+                }
+            }
 
         }
     }
