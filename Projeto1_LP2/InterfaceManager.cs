@@ -8,6 +8,10 @@ namespace Projeto1_LP2
 {
     public class InterfaceManager
     {
+        public InterfaceManager(string args)
+        {
+            GamesList lst = new GamesList(args);
+        }
 
         public int ReadEntry()
         {
@@ -15,7 +19,7 @@ namespace Projeto1_LP2
 
             while (true)
             {
-                read_number = Console.Read();
+                read_number = Convert.ToInt32(Console.ReadLine());
                 int id;
                 
                 switch (read_number)
