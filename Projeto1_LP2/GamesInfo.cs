@@ -34,41 +34,50 @@ namespace Projeto1_LP2
         public readonly Uri website;
         public readonly DateTime release_date;
 
-        public GamesInfo(string name, int id, int r_age, int dlc,
-                    int metacritic, int movie_count, int recommendation_count,
-                    int screenshot_count, int owners, int number_of_players,
-                    int achievement_count, bool controller_support,
-                    bool platform_windows, bool platform_linux, bool platform_mac,
-                    bool category_singleplayer, bool category_multiplayer,
-                    bool category_coop, bool category_include_level_editor,
-                    bool category_vr_support, string about_text, Uri support_URL,
-                    Uri header_image, Uri website, DateTime release_date)
+        public GamesInfo(string s)
         {
-            this.name = name;
-            this.id = id;
-            this.release_date = release_date;
-            this.r_age = r_age;
-            this.dlc = dlc;
-            this.metacritic = metacritic;
-            this.movie_count = movie_count;
-            this.recommendation_count = recommendation_count;
-            this.screenshot_count = screenshot_count;
-            this.owners = owners;
-            this.number_of_players = number_of_players;
-            this.achievement_count = achievement_count;
-            this.controller_support = controller_support;
-            this.platform_windows = platform_windows;
-            this.platform_mac = platform_mac;
-            this.platform_linux = platform_linux;
-            this.category_singleplayer = category_singleplayer;
-            this.category_multiplayer = category_multiplayer;
-            this.category_coop = category_coop;
-            this.category_include_level_editor = category_include_level_editor;
-            this.category_vr_support = category_vr_support;
-            this.support_URL = support_URL;
-            this.about_text = about_text;
-            this.header_image = header_image;
-            this.website = website;
+            string[] parse = s.Split(',');
+            id = Convert.ToInt32(parse[0]);
+            name = parse[1];
+            DateTime.TryParse(parse[2], out release_date);
+            r_age = Convert.ToInt32(parse[3]);
+            dlc = Convert.ToInt32(parse[4]);
+            metacritic = Convert.ToInt32(parse[5]);
+            movie_count = Convert.ToInt32(parse[6]);
+            recommendation_count = Convert.ToInt32(parse[7]);
+            screenshot_count = Convert.ToInt32(parse[8]);
+            owners = Convert.ToInt32(parse[9]);
+            number_of_players = Convert.ToInt32(parse[10]);
+            achievement_count = Convert.ToInt32(parse[11]);
+            controller_support = Convert.ToBoolean(parse[12]);
+            platform_windows = Convert.ToBoolean(parse[13]);
+            platform_linux = Convert.ToBoolean(parse[14]);
+            platform_mac = Convert.ToBoolean(parse[15]);
+            category_singleplayer = Convert.ToBoolean(parse[16]);
+            category_multiplayer = Convert.ToBoolean(parse[17]);
+            category_coop = Convert.ToBoolean(parse[18]);
+            category_include_level_editor = Convert.ToBoolean(parse[19]);
+            category_vr_support = Convert.ToBoolean(parse[20]);
+            Uri.TryCreate(parse[21], UriKind.Absolute, out support_URL);
+            about_text = parse[22];
+            Uri.TryCreate(parse[23], UriKind.Absolute, out header_image);
+            Uri.TryCreate(parse[24], UriKind.Absolute, out website);
+        }
+
+        public override string ToString()
+        {
+            return string.Format($"ID: {id}\nName: {name}\nRelease date: {release_date}\n" +
+                $"Required age: {r_age}\nDLC count: {dlc}\nMetacritic: {metacritic}\n" +
+                $"Movie count: {movie_count}\nRecommendation count: {recommendation_count}\n" +
+                $"Screenshot count: {screenshot_count}\nOwners: {owners}\nNumber of players: " +
+                $"{number_of_players}\nAchievement count: {achievement_count}\nController support: " +
+                $"{controller_support}\nPlatform windows: {platform_windows}\nPlatform linux: " +
+                $"{platform_linux}\nPlatform mac: {platform_mac}\nCategory singleplayer: " +
+                $"{category_singleplayer}\nCategory multiplayer: {category_multiplayer}\n" +
+                $"Category coop: {category_coop}\nCategory include level editor: " +
+                $"{category_include_level_editor}\nCategory VR support: {category_vr_support}\n" +
+                $"Support URL: {support_URL}\nAbout text: {about_text}\nHeader image: " +
+                $"{header_image}\nWebsite: {website}");
         }
     }
 }
