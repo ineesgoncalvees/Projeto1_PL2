@@ -11,9 +11,6 @@ namespace Projeto1_LP2
         static void Main(string[] args)
         {
             InterfaceManager im = new InterfaceManager(args[0]);
-            Interface menu = new Interface(args[0]);
-
-            menu.ShowMenu();
         }
     }
 }
