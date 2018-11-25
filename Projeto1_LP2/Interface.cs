@@ -8,6 +8,10 @@ namespace Projeto1_LP2
 {
     public class Interface : InterfaceManager
     {
+        public Interface(string args) : base(args)
+        {
+        }
+
         public void ShowMenu()
         {
             Console.WriteLine("╔═══*.·:·.**  < x >  **.·:·.*═══╗");
