@@ -1,13 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Projeto1_LP2
 {
+    /// <summary>
+    /// Class that will store all the needed variables
+    /// </summary>
     public class GamesInfo
     {
+        // Variables needed to get the information on the list, on readonly, so
+        // they don't get altered
         public readonly string name;
         public readonly int id;
         public readonly int r_age;
@@ -34,9 +35,17 @@ namespace Projeto1_LP2
         public readonly Uri website;
         public readonly DateTime release_date;
 
+        /// <summary>
+        /// Constructor of the class
+        /// </summary>
+        /// <param name="s"></param>
         public GamesInfo(string s)
         {
+            // This parse array will split the information every time it
+            // encounters a comma
             string[] parse = s.Split(',');
+            // Will convert the variable to the corresponding type, and place
+            // them on the array
             id = Convert.ToInt32(parse[0]);
             name = parse[1];
             DateTime.TryParse(parse[2], out release_date);
@@ -64,15 +73,20 @@ namespace Projeto1_LP2
             Uri.TryCreate(parse[24], UriKind.Absolute, out website);
         }
 
+        // This method will show the user the game's information, and will be
+        // overriden each time a new ID input is made
         public override string ToString()
         {
-            return string.Format($"ID: {id}\nName: {name}\nRelease date: {release_date}\n" +
-                $"Required age: {r_age}\nDLC count: {dlc}\nMetacritic: {metacritic}\n" +
-                $"Movie count: {movie_count}\nRecommendation count: {recommendation_count}\n" +
-                $"Screenshot count: {screenshot_count}\nOwners: {owners}\nNumber of players: " +
-                $"{number_of_players}\nAchievement count: {achievement_count}\nController support: " +
-                $"{controller_support}\nPlatform windows: {platform_windows}\nPlatform linux: " +
-                $"{platform_linux}\nPlatform mac: {platform_mac}\nCategory singleplayer: " +
+            return string.Format($"ID: {id}\nName: {name}\nRelease date:" +
+                $"{release_date}\n" + $"Required age: {r_age}\nDLC count:{dlc}\n" +
+                $"Metacritic: {metacritic}\n" + $"Movie count: {movie_count}\n" +
+                $"Recommendation count: {recommendation_count}\n" +
+                $"Screenshot count: {screenshot_count}\nOwners: {owners}\n" +
+                $"Number of players: " + $"{number_of_players}\n" +
+                $"Achievement count: {achievement_count}\nController support: " +
+                $"{controller_support}\nPlatform windows: {platform_windows}\n" +
+                $"Platform linux: " + $"{platform_linux}\n" +
+                $"Platform mac: {platform_mac}\nCategory singleplayer: " +
                 $"{category_singleplayer}\nCategory multiplayer: {category_multiplayer}\n" +
                 $"Category coop: {category_coop}\nCategory include level editor: " +
                 $"{category_include_level_editor}\nCategory VR support: {category_vr_support}\n" +
