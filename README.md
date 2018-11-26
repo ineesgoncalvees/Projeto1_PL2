@@ -65,7 +65,9 @@ Our _ToString()_ consists in all parameters needed for the game's information.
 With this project, we learned how to better use a _List_ and we have a better understanding
 of the _StreamReader_.
 
-Unfortunately, we could not finish all the project due to 
+Unfortunately, we could not finish all the project due to not knowing how to properly do the rest.
+We felt like we struggled a lot with the search method, and although we understand what is being given
+during class, we do not know how to apply that knowledge on a project this complex.
 
 ## References
 
