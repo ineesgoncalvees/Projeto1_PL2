@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Projeto1_LP2
 {
     public class InterfaceManager
     {
-        Interface i;
         GamesList lst;
 
         public InterfaceManager() { }
@@ -16,24 +11,32 @@ namespace Projeto1_LP2
         public InterfaceManager(string args)
         {
             lst = new GamesList(args);
-            i = new Interface();
-            i.ShowMenu();
+            ShowMenu();
+        }
+
+        public void ShowMenu()
+        {
+            Console.WriteLine("╔═══*.·:·.**  < x >  **.·:·.*═══╗");
+            Console.WriteLine();
+            Console.WriteLine("       1. Show game's info\n" +
+                              "       2. Make a research\n" +
+                              "       3. Leave\n");
+            Console.WriteLine("╚═══*.·:·.**  < x >  **.·:·.*═══╝");
+
+            ReadEntry();
         }
 
         public int ReadEntry()
         {
-            string read_number;            
-
             while (true)
             {
-                read_number = Console.ReadLine();
                 int id;
                 
-                switch (read_number)
+                switch (Console.ReadLine())
                 {
                     case "1":
                         Console.WriteLine("Insert the game's ID, please. \n");
-                        id = Console.Read();
+                        id = Convert.ToInt32(Console.ReadLine());
                         CheckID(id);
                         break;
 
@@ -48,7 +51,8 @@ namespace Projeto1_LP2
                     default:
                         Console.WriteLine("Not a valid number. Try again.");
                         Console.ReadLine();
-                        i.ShowMenu();
+                        Console.Clear();
+                        ShowMenu();
                         break;
                 }
             }
@@ -63,6 +67,7 @@ namespace Projeto1_LP2
                     if (gi.id == id) 
                     {
                         Console.WriteLine(gi.ToString());
+                        break;
                     }
                 }
             }
@@ -70,8 +75,8 @@ namespace Projeto1_LP2
 
         private void Search()
         {
-            int read_id;
-            read_id = Console.Read();
+            Console.WriteLine("Faz a prócura dos jogos do steam através de" +
+                "filtros.");
         }
     }
 }
