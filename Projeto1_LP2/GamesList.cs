@@ -19,16 +19,14 @@ namespace Projeto1_LP2
             using (StreamReader sr = new StreamReader(args))
             {
                 string info = "";
-                GamesInfo gi = null;
                 int srl = 0;
                 
                 while((info = sr.ReadLine()) != null)
                 {
-                    string[] parse = info.Split(',');
                     bool id_exists = false;
                     if (srl != 0)
                     {
-                        gi = new GamesInfo(info);
+                        GamesInfo gi = new GamesInfo(info);
 
                         foreach (GamesInfo g_info in this)
                         {
