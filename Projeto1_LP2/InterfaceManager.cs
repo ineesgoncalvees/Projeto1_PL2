@@ -75,8 +75,8 @@ namespace Projeto1_LP2
 
         private void Search()
         {
-            Console.WriteLine("Faz a prócura dos jogos do steam através de" +
-                "filtros.");
+            Console.WriteLine("Search for the games on steam here. (Under" +
+                "constrution)");
         }
     }
 }
